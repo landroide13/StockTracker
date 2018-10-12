@@ -1,0 +1,23 @@
+html {
+  min-height: 100%;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background: url(/img/invest3.jpg) no-repeat;
+  background-size: 100%;
+  background-position: top;
+  background-color: #9e9a9a;
+  min-height: 100%;
+}
+
+form {
+  padding: 20px;
+  margin-top: 60px;
+}
+
+form button,
+form h5 {
+  margin: 20px 0;
+}

@@ -1,16 +1,18 @@
 import React from 'react'
+import SignInLinks from './SignInLinks'
+import SignOutLinks from './SignOutLinks'
+import { Link } from 'react-router-dom'
 
-export default () => {
+const Nav = () => {
   return (
     <React.Fragment>
 
       <nav>
-        <div className="nav-wrapper grey">
-          <a href="#" className="brand-logo">Stocks</a>
+        <div className="nav-wrapper black">
+          <Link to="/" className="brand-logo">Stocks</Link>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li><a href="sass.html">Login</a></li>
-            <li><a href="badges.html">LogOut</a></li>
-            <li><a href="collapsible.html">Add Stock</a></li>
+            <SignInLinks />
+            <SignOutLinks />
           </ul>
         </div>
       </nav>
@@ -18,3 +20,5 @@ export default () => {
     </React.Fragment>
   )
 }
+
+export default Nav;

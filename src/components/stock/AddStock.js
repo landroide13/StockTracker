@@ -4,7 +4,8 @@ class AddStock extends Component {
   constructor(props){
     super(props);
     this.state = {
-      symbol: ''
+      symbol: '',
+      coment:''
     }
   }
 
@@ -25,12 +26,21 @@ class AddStock extends Component {
     return (
       <React.Fragment>
 
-        <div className="row">
-          <form onSubmit={this.onSubmit}>
-            <div className="input-field col s6">
+        <div className="container">
+          <form onSubmit={this.onSubmit} className="white">
+            <h5 className="grey-text text-darken-3">Add Stock</h5>
+            <div className="input-field">
               <label htmlFor="symbol">Stock</label>
               <input id="symbol" type="text" onChange={this.handleChange} />
-              <button className="btn green">Add</button>
+            </div>
+
+            <div className="input-field">
+              <label htmlFor="coment">Comment</label>
+              <input id="coment" type="text" onChange={this.handleChange} />
+            </div>
+
+            <div className="input-field">
+              <button className="btn green">Add Stock</button>
             </div>
           </form>  
         </div>
