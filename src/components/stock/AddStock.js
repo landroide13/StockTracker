@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addStock } from '../../store/actions/stockAction';
+import { Redirect } from 'react-router-dom';
 
 class AddStock extends Component {
   constructor(props){
     super(props);
     this.state = {
       symbol: '',
-      coment:''
+      comment:''
     }
   }
 
@@ -16,12 +19,16 @@ class AddStock extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    console.log(this.state)
+    // console.log(this.state)
+    this.props.addStock(this.state)
   }
 
 
   render() {
 
+    const { auth } = this.props
+
+    if(!auth.uid) return <Redirect to='/signin' />
 
     return (
       <React.Fragment>
@@ -35,8 +42,8 @@ class AddStock extends Component {
             </div>
 
             <div className="input-field">
-              <label htmlFor="coment">Comment</label>
-              <input id="coment" type="text" onChange={this.handleChange} />
+              <label htmlFor="comment">Comment</label>
+              <input id="comment" type="text" onChange={this.handleChange} />
             </div>
 
             <div className="input-field">
@@ -50,5 +57,19 @@ class AddStock extends Component {
   }
 }
 
+const mapStateToProps = (state) =>{
+  return{
+    auth: state.firebase.auth
+  }
+}
 
-export default AddStock
+
+const mapDispatchToProps = (dispatch) =>{
+  return{
+    addStock: (stock) => dispatch(addStock(stock))
+  }
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddStock)
