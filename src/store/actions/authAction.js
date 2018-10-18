@@ -13,7 +13,7 @@ export const signIn = (credentials) =>{
   }
 }
 
-export const signup = (newUser) =>{
+export const signUp = (newUser) =>{
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const firestore = getFirestore()
