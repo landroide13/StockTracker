@@ -14,7 +14,7 @@ const SignInLinks = (props) => {
       <ul className="right">
         <li><NavLink to="/add">Add Stock</NavLink></li>
         <li><a onClick={props.signOut}>LogOut</a></li>
-        <li><NavLink to="/" className="btn btn-floating green lighten-1">WB</NavLink></li>
+        <li><NavLink to="/" className="btn btn-floating green lighten-1">{props.profile.initials}</NavLink></li>
       </ul>
       
     </React.Fragment>

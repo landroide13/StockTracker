@@ -21,6 +21,7 @@ class AddStock extends Component {
     e.preventDefault();
     // console.log(this.state)
     this.props.addStock(this.state)
+    this.props.history.push('/')
   }
 
 

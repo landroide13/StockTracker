@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 // import Stock from './StockDetails'
 
 const StockSummary = ({ stock }) => {
@@ -17,7 +18,8 @@ const StockSummary = ({ stock }) => {
           <div className="card-content grey-text text-darken-3">
               <span className="card-title">{ stock.symbol}</span>
               <p>{ stock.comment }</p>
-              <p className="grey-text">Dated</p>
+              <p>{stock.authorFirstName} {stock.authorLastName} ' Portfolios</p>
+              <p className="grey-text">{ moment(stock.createdAt.toDate()).calendar() }</p>
           </div>
         </div>
 
